@@ -1,27 +1,27 @@
 # coding: utf-8
 """
-Base file for external module development.
-To get the module/function being called:
+Base para desarrollo de modulos externos.
+Para obtener el modulo/Funcion que se esta llamando:
      GetParams("module")
-
-To get variables sent from a Rocketbot form/command:
+ 
+Para obtener las variables enviadas desde formulario/comando Rocketbot:
     var = GetParams(variable)
-    The variable name is defined in the package.json form.
-
-To update a Rocketbot variable:
-    SetVar(Variable_Rocketbot, "value")
-
-To get a Rocketbot variable:
+    Las "variable" se define en forms del archivo package.json
+ 
+Para modificar la variable de Rocketbot:
+    SetVar(Variable_Rocketbot, "dato")
+ 
+Para obtener una variable de Rocketbot:
     var = GetVar(Variable_Rocketbot)
-
-To get the selected option:
-    option = GetParams("option")
-
-
-To install libraries, open a terminal in the "libs" folder.
-
+ 
+Para obtener la Opcion seleccionada:
+    opcion = GetParams("option")
+ 
+ 
+Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
+ 
     pip install <package> -t .
-
+ 
 """
 
 import os
@@ -104,6 +104,8 @@ elif module == "get_table":
 
     try:
         response = mod_Supabase.get_table_command(table_name, sort)
+        if isinstance(response, dict) and isinstance(response.get("table"), list):
+            response = response.get("table")
         SetVar(res, response)
     except Exception as e:
         SetVar(res, False)
@@ -118,6 +120,8 @@ elif module == "filter_table":
 
     try:
         response = mod_Supabase.filter_table_command(table_name, filter_column, filter_value)
+        if isinstance(response, dict) and isinstance(response.get("table"), list):
+            response = response.get("table")
         SetVar(res, response)
     except Exception as e:
         SetVar(res, False)
@@ -155,6 +159,11 @@ elif module == "list_table_columns":
 
     try:
         response = mod_Supabase.list_table_columns_command(table_name)
+        if isinstance(response, dict) and isinstance(response.get("columns"), list):
+            response = [
+                column.get("name") if isinstance(column, dict) else column
+                for column in response.get("columns")
+            ]
         SetVar(res, response)
     except Exception as e:
         SetVar(res, False)
@@ -212,6 +221,11 @@ elif module == "list_buckets":
 
     try:
         response = mod_Supabase.list_buckets_command()
+        if isinstance(response, dict) and isinstance(response.get("bucketList"), list):
+            response = [
+                bucket.get("name") or bucket.get("id") if isinstance(bucket, dict) else bucket
+                for bucket in response.get("bucketList")
+            ]
         SetVar(res, response)
     except Exception as e:
         SetVar(res, False)
@@ -229,7 +243,7 @@ elif module == "create_bucket":
         response = mod_Supabase.create_bucket_command(
             bucket_name, public, file_size_limit, allowed_mime_types
         )
-        SetVar(res, response)
+        SetVar(res, bool(response))
     except Exception as e:
         SetVar(res, False)
         PrintException()
@@ -255,6 +269,8 @@ elif module == "list_files":
 
     try:
         response = mod_Supabase.list_files_command(bucket, path)
+        if isinstance(response, dict) and isinstance(response.get("fileList"), list):
+            response = response.get("fileList")
         SetVar(res, response)
     except Exception as e:
         SetVar(res, False)
@@ -270,7 +286,7 @@ elif module == "upload_file":
 
     try:
         response = mod_Supabase.upload_file_command(bucket, local_path, object_path, upsert)
-        SetVar(res, response)
+        SetVar(res, bool(response))
     except Exception as e:
         SetVar(res, False)
         PrintException()
@@ -284,7 +300,7 @@ elif module == "download_file":
 
     try:
         response = mod_Supabase.download_file_command(bucket, object_path, local_dest)
-        SetVar(res, response)
+        SetVar(res, bool(response))
     except Exception as e:
         SetVar(res, False)
         PrintException()
@@ -293,10 +309,18 @@ elif module == "download_file":
 elif module == "execute_postgres_function":
     function_name = GetParams("function_name")
     params_json = GetParams("params")
+    include_api_response = GetParams("include_api_response")
     res = GetParams("result_var")
 
     try:
         response = mod_Supabase.execute_postgres_function_command(function_name, params_json)
+        if str(include_api_response).lower() not in ("1", "true", "yes", "y"):
+            if isinstance(response, dict):
+                result = response.get("result")
+                if isinstance(result, dict) and "message" in result:
+                    response = result.get("message")
+                elif "message" in response:
+                    response = response.get("message")
         SetVar(res, response)
     except Exception as e:
         SetVar(res, False)
@@ -344,6 +368,7 @@ elif module == "retrieve_documents":
     embedding_model = GetParams("embedding_model")
     match_threshold = GetParams("match_threshold")
     rpc_params = GetParams("rpc_params")
+    include_details = GetParams("include_details")
     res = GetParams("result_var")
 
     try:
@@ -357,6 +382,11 @@ elif module == "retrieve_documents":
             match_threshold,
             rpc_params,
         )
+        if str(include_details).lower() not in ("1", "true", "yes", "y"):
+            if isinstance(response, list):
+                response = [item.get("content") if isinstance(item, dict) else item for item in response]
+            elif isinstance(response, dict) and "content" in response:
+                response = response.get("content")
         SetVar(res, response)
     except Exception as e:
         SetVar(res, False)
@@ -392,4 +422,3 @@ elif module == "trigger_supabase":
 
 else:
     raise Exception(f"Module '{module}' is not implemented.")
-
