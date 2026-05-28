@@ -31,13 +31,13 @@
                 "options": null
             },
             "es": {
-                "title": "Conexion - Conectar",
+                "title": "Conectar",
                 "description": "Conecta con un proyecto Supabase y verifica que la API key tenga acceso.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Conexao - Conectar",
+                "title": "Conectar",
                 "description": "Conecta a um projeto Supabase e verifica se a API key tem acesso.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -45,23 +45,6 @@
             "form": {
                 "css": "modal-lg",
                 "inputs": [
-                    {
-                        "type": "credential",
-                        "title": {
-                            "en": "Credential",
-                            "es": "Credencial",
-                            "pr": "Credencial"
-                        },
-                        "description": {
-                            "es": "Credencial guardada de Supabase. Si se informa, puede usarse para completar la URL del proyecto y la API key.",
-                            "en": "Saved Supabase credential. When provided, it can be used to fill the project URL and API key.",
-                            "pr": "Credencial salva do Supabase. Quando informada, pode ser usada para preencher a URL do projeto e a API key."
-                        },
-                        "credential_type": "supabase",
-                        "id": "credential",
-                        "css": "col-md-12",
-                        "required": false
-                    },
                     {
                         "type": "input",
                         "placeholder": "https://<project-ref>.supabase.co",
@@ -145,13 +128,13 @@
                 "options": null
             },
             "es": {
-                "title": "Tablas - Obtener Tabla",
+                "title": "Obtener Tabla",
                 "description": "Lee filas de una tabla Supabase, con orden opcional por created_at.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Tabelas - Obter Tabela",
+                "title": "Obter Tabela",
                 "description": "Le linhas de uma tabela Supabase, com ordenacao opcional por created_at.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -241,13 +224,13 @@
                 "options": null
             },
             "es": {
-                "title": "Tablas - Filtrar Tabla",
+                "title": "Filtrar Tabla",
                 "description": "Lee filas de una tabla donde una columna coincide con el valor indicado.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Tabelas - Filtrar Tabela",
+                "title": "Filtrar Tabela",
                 "description": "Le linhas de uma tabela onde uma coluna coincide com o valor informado.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -355,13 +338,13 @@
                 "options": null
             },
             "es": {
-                "title": "Tablas - Columnas (template)",
+                "title": "Columnas (template)",
                 "description": "Crea una plantilla JSON vacia usando las columnas detectadas en una tabla.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Tabelas - Colunas (template)",
+                "title": "Colunas (template)",
                 "description": "Cria um modelo JSON vazio usando as colunas detectadas em uma tabela.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -435,13 +418,13 @@
                 "options": null
             },
             "es": {
-                "title": "Tablas - Listar Columnas",
+                "title": "Listar Columnas",
                 "description": "Devuelve los nombres de columnas disponibles en una tabla.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Tabelas - Listar Colunas",
+                "title": "Listar Colunas",
                 "description": "Retorna os nomes de colunas disponiveis em uma tabela.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -515,13 +498,13 @@
                 "options": null
             },
             "es": {
-                "title": "Tablas - Insertar Filas",
+                "title": "Insertar Filas",
                 "description": "Inserta una o mas filas en una tabla desde un array JSON.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Tabelas - Inserir Linhas",
+                "title": "Inserir Linhas",
                 "description": "Insere uma ou mais linhas em uma tabela a partir de um array JSON.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -612,13 +595,13 @@
                 "options": null
             },
             "es": {
-                "title": "Tablas - Actualizar Filas",
+                "title": "Actualizar Filas",
                 "description": "Actualiza una columna en filas seleccionadas por un filtro de igualdad.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Tabelas - Atualizar Linhas",
+                "title": "Atualizar Linhas",
                 "description": "Atualiza uma coluna em linhas selecionadas por um filtro de igualdade.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -760,13 +743,13 @@
                 "options": null
             },
             "es": {
-                "title": "Tablas - Actualizar Multiples",
+                "title": "Actualizar Multiples",
                 "description": "Actualiza multiples filas desde un datatable JSON, usando id o una clausula WHERE.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Tabelas - Atualizar Multiplas",
+                "title": "Atualizar Multiplas",
                 "description": "Atualiza multiplas linhas a partir de um datatable JSON, usando id ou uma clausula WHERE.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -874,13 +857,13 @@
                 "options": null
             },
             "es": {
-                "title": "Tablas - Borrar Filas",
+                "title": "Borrar Filas",
                 "description": "Elimina filas de una tabla donde una columna coincide con el valor indicado.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Tabelas - Excluir Linhas",
+                "title": "Excluir Linhas",
                 "description": "Exclui linhas de uma tabela onde uma coluna coincide com o valor informado.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -1620,19 +1603,19 @@
         },
         {
             "en": {
-                "title": "Functions - Execute Postgres Function",
+                "title": "Execute Postgres Function",
                 "description": "Execute a Postgres RPC function in Supabase with optional JSON parameters.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Funciones - Ejecutar Funcion",
+                "title": "Ejecutar Funcion",
                 "description": "Ejecuta una funcion RPC de Postgres en Supabase con parametros JSON opcionales.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Funcoes - Executar Funcao",
+                "title": "Executar Funcao",
                 "description": "Executa uma funcao RPC do Postgres no Supabase com parametros JSON opcionais.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -2330,13 +2313,13 @@
                 "options": null
             },
             "es": {
-                "title": "Disparador - Consultar nuevos registros",
+                "title": "Consultar nuevos registros",
                 "description": "Consulta una tabla buscando filas con id mayor al ultimo id procesado.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Disparador - Consultar novos registros",
+                "title": "Consultar novos registros",
                 "description": "Consulta uma tabela buscando linhas com id maior que o ultimo id processado.",
                 "title_options": "Selecione uma opcao",
                 "options": null
