@@ -25,7 +25,7 @@
     "children": [
         {
             "en": {
-                "title": "Connection - Connect",
+                "title": "Connect",
                 "description": "Connect to a Supabase project and verify that the API key can access the project.",
                 "title_options": "Select Option",
                 "options": null
@@ -139,7 +139,7 @@
         },
         {
             "en": {
-                "title": "Tables - Get Table",
+                "title": "Get Table",
                 "description": "Read rows from a Supabase table, with optional sorting by created_at.",
                 "title_options": "Select Option",
                 "options": null
@@ -235,7 +235,7 @@
         },
         {
             "en": {
-                "title": "Tables - Filter Table",
+                "title": "Filter Table",
                 "description": "Read rows from a table where one column matches the provided value.",
                 "title_options": "Select Option",
                 "options": null
@@ -349,7 +349,7 @@
         },
         {
             "en": {
-                "title": "Tables - Get Table Columns",
+                "title": "Get Table Columns",
                 "description": "Build a blank JSON row template using the columns detected in a table.",
                 "title_options": "Select Option",
                 "options": null
@@ -429,7 +429,7 @@
         },
         {
             "en": {
-                "title": "Tables - List Table Columns",
+                "title": "List Table Columns",
                 "description": "Return the available column names for a table.",
                 "title_options": "Select Option",
                 "options": null
@@ -509,7 +509,7 @@
         },
         {
             "en": {
-                "title": "Tables - Insert Rows",
+                "title": "Insert Rows",
                 "description": "Insert one or more rows into a table from a JSON array.",
                 "title_options": "Select Option",
                 "options": null
@@ -606,7 +606,7 @@
         },
         {
             "en": {
-                "title": "Tables - Update Rows",
+                "title": "Update Rows",
                 "description": "Update one column in rows selected by an equality filter.",
                 "title_options": "Select Option",
                 "options": null
@@ -754,7 +754,7 @@
         },
         {
             "en": {
-                "title": "Tables - Update Multiple Rows",
+                "title": "Update Multiple Rows",
                 "description": "Update multiple rows from a JSON datatable, using id or a WHERE clause to match rows.",
                 "title_options": "Select Option",
                 "options": null
@@ -868,7 +868,7 @@
         },
         {
             "en": {
-                "title": "Tables - Delete Rows",
+                "title": "Delete Rows",
                 "description": "Delete rows from a table where a column matches the provided value.",
                 "title_options": "Select Option",
                 "options": null
@@ -982,19 +982,19 @@
         },
         {
             "en": {
-                "title": "Storage - List Buckets",
+                "title": "List Buckets",
                 "description": "List the Storage buckets available in the connected Supabase project.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Storage - Listar contenedores de archivos",
+                "title": "Listar contenedores de archivos",
                 "description": "Lista los buckets de Storage disponibles en el proyecto Supabase conectado.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Storage - Listar recipientes de arquivos",
+                "title": "Listar recipientes de arquivos",
                 "description": "Lista os buckets de Storage disponiveis no projeto Supabase conectado.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -1045,19 +1045,19 @@
         },
         {
             "en": {
-                "title": "Storage - Create Bucket",
+                "title": "Create Bucket",
                 "description": "Create a Storage bucket and optionally configure visibility, size limit, and MIME types.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Storage - Crear contenedor de archivos",
+                "title": "Crear contenedor de archivos",
                 "description": "Crea un bucket de Storage y permite configurar visibilidad, limite y tipos MIME.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Storage - Criar recipiente de arquivos",
+                "title": "Criar recipiente de arquivos",
                 "description": "Cria um bucket de Storage e permite configurar visibilidade, limite e tipos MIME.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -1175,19 +1175,19 @@
         },
         {
             "en": {
-                "title": "Storage - Get Bucket",
+                "title": "Get Bucket",
                 "description": "Get bucket details and optionally include the files stored at the bucket root.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Storage - Obtener contenedor de archivos",
+                "title": "Obtener contenedor de archivos",
                 "description": "Obtiene detalles de un bucket y opcionalmente lista sus archivos en la raiz.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Storage - Obter recipiente de arquivos",
+                "title": "Obter recipiente de arquivos",
                 "description": "Obtem detalhes de um bucket e opcionalmente lista seus arquivos na raiz.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -1271,19 +1271,19 @@
         },
         {
             "en": {
-                "title": "Storage - List Files",
+                "title": "List Files",
                 "description": "List files in a Storage bucket, optionally filtering by path or prefix.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Storage - Listar Archivos",
+                "title": "Listar Archivos",
                 "description": "Lista archivos de un bucket de Storage, con filtro opcional por path o prefijo.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Storage - Listar Arquivos",
+                "title": "Listar Arquivos",
                 "description": "Lista arquivos de um bucket de Storage, com filtro opcional por path ou prefixo.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -1368,19 +1368,19 @@
         },
         {
             "en": {
-                "title": "Storage - Upload File",
+                "title": "Upload File",
                 "description": "Upload a local file to a Storage bucket, with optional object path and upsert.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Storage - Subir Archivo",
+                "title": "Subir Archivo",
                 "description": "Sube un archivo local a un bucket de Storage, con object path y upsert opcionales.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Storage - Enviar Arquivo",
+                "title": "Enviar Arquivo",
                 "description": "Envia um arquivo local para um bucket de Storage, com object path e upsert opcionais.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -1502,19 +1502,19 @@
         },
         {
             "en": {
-                "title": "Storage - Download File",
+                "title": "Download File",
                 "description": "Download a Storage object from a bucket into a selected local folder or file path.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Storage - Descargar Archivo",
+                "title": "Descargar Archivo",
                 "description": "Descarga un objeto de Storage desde un bucket a una carpeta o ruta local.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Storage - Baixar Arquivo",
+                "title": "Baixar Arquivo",
                 "description": "Baixa um objeto de Storage de um bucket para uma pasta ou rota local.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -1733,19 +1733,19 @@
         },
         {
             "en": {
-                "title": "Embeddings - Connect",
+                "title": "Connect - Embedding Provider",
                 "description": "Configure the embedding provider API key and return the available embedding models.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Embeddings - Configurar busqueda semantica",
+                "title": "Configurar busqueda semantica",
                 "description": "Configura la API key del proveedor de embeddings y devuelve los modelos disponibles.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Embeddings - Configurar busca semantica",
+                "title": "Configurar busca semantica",
                 "description": "Configura a API key do provedor de embeddings e retorna os modelos disponiveis.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -1868,19 +1868,19 @@
         },
         {
             "en": {
-                "title": "Embeddings - Generate And Store Embedding",
+                "title": "Generate And Store Embedding",
                 "description": "Split text into chunks, generate embeddings, and insert the vectors into a table.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Embeddings - Generar vector de texto",
+                "title": "Generar vector de texto",
                 "description": "Divide texto en fragmentos, genera embeddings e inserta los vectores en una tabla.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Embeddings - Gerar vetor de texto",
+                "title": "Gerar vetor de texto",
                 "description": "Divide texto em partes, gera embeddings e insere os vetores em uma tabela.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -2105,19 +2105,19 @@
         },
         {
             "en": {
-                "title": "Embeddings - Retrieve Documents",
+                "title": "Retrieve Documents",
                 "description": "Generate a query embedding and call a vector-search RPC to retrieve matching documents.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Embeddings - Buscar Documentos",
+                "title": "Buscar Documentos",
                 "description": "Genera un embedding de consulta y llama un RPC vectorial para buscar documentos.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Embeddings - Buscar Documentos",
+                "title": "Buscar Documentos",
                 "description": "Gera um embedding de consulta e chama um RPC vetorial para buscar documentos.",
                 "title_options": "Selecione uma opcao",
                 "options": null
@@ -2324,7 +2324,7 @@
         },
         {
             "en": {
-                "title": "Triggers - Trigger Supabase",
+                "title": "Trigger Supabase",
                 "description": "Poll a table for rows with id greater than the last processed id.",
                 "title_options": "Select Option",
                 "options": null
