@@ -66,7 +66,7 @@ Download a Storage object from a bucket into a selected local folder or file pat
 16. Execute Postgres Function
 Execute a Postgres RPC function in Supabase with optional JSON parameters.
 
-17. Embeddings Connect
+17. Connect - Embedding Provider
 Configure the embedding provider API key and return the available embedding models.
 
 18. Generate And Store Embedding

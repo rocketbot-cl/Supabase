@@ -45,13 +45,13 @@ Actualiza multiples filas desde un datatable JSON, usando id o una clausula WHER
 9. Borrar Filas
 Elimina filas de una tabla donde una columna coincide con el valor indicado.
 
-10. Listar Buckets
+10. Listar contenedores de archivos
 Lista los buckets de Storage disponibles en el proyecto Supabase conectado.
 
-11. Crear Bucket
+11. Crear contenedor de archivos
 Crea un bucket de Storage y permite configurar visibilidad, limite y tipos MIME.
 
-12. Obtener Bucket
+12. Obtener contenedor de archivos
 Obtiene detalles de un bucket y opcionalmente lista sus archivos en la raiz.
 
 13. Listar Archivos
@@ -66,16 +66,16 @@ Descarga un objeto de Storage desde un bucket a una carpeta o ruta local.
 16. Ejecutar Funcion
 Ejecuta una funcion RPC de Postgres en Supabase con parametros JSON opcionales.
 
-17. Conectar Embeddings
+17. Configurar busqueda semantica
 Configura la API key del proveedor de embeddings y devuelve los modelos disponibles.
 
-18. Generar Embedding
+18. Generar vector de texto
 Divide texto en fragmentos, genera embeddings e inserta los vectores en una tabla.
 
 19. Buscar Documentos
 Genera un embedding de consulta y llama un RPC vectorial para buscar documentos.
 
-20. Trigger Supabase
+20. Consultar nuevos registros
 Consulta una tabla buscando filas con id mayor al ultimo id procesado.
 
 

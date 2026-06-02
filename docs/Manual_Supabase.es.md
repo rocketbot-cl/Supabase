@@ -8,7 +8,7 @@ Supabase es una plataforma open-source basada en Postgres para construir backend
 
 *Read this in other languages: [English](Manual_Supabase.md), [Português](Manual_Supabase.pr.md), [Español](Manual_Supabase.es.md)*
 
-![banner](imgs/Banner_Supabase.png o jpg)
+![banner](imgs/Banner_Supabase.jpg)
 ## Como instalar este módulo
 
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
@@ -73,200 +73,201 @@ https://supabase.com/docs/guides/ai/vector-indexes
 Conecta con un proyecto Supabase y verifica que la API key tenga acceso.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Credencial|||
-|Project URL||https://<project-ref>.supabase.co|
-|API Key||eyJhbGciOi...|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|URL del proyecto|Direccion web del proyecto Supabase, por ejemplo https//project-ref.supabase.co.|https://<project-ref>.supabase.co|
+|Clave de API|Clave de acceso de Supabase usada para autenticar las solicitudes al proyecto.|eyJhbGciOi...|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
 ### Obtener Tabla
 
 Lee filas de una tabla Supabase, con orden opcional por created_at.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de tabla||public.users|
-|Ordenar por created_at (opcional)|||
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
+|Ordenar por created_at (opcional)|Si esta activo, ordena los registros por la columna created_at.||
+|Asignar resultado a variable|Nombre de la variable donde se guardara la lista de registros de la tabla. Si no hay registros, guarda una lista vacia [].|resultado|
 
 ### Filtrar Tabla
 
 Lee filas de una tabla donde una columna coincide con el valor indicado.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de tabla||public.users|
-|Columna filtro||id|
-|Valor filtro||1|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
+|Columna filtro|Nombre de la columna que se usara para filtrar registros.|id|
+|Valor filtro|Valor que debe coincidir con la columna de filtro.|1|
+|Asignar resultado a variable|Nombre de la variable donde se guardara la lista de registros filtrados. Si no hay coincidencias, guarda una lista vacia [].|resultado|
 
 ### Columnas (template)
 
 Crea una plantilla JSON vacia usando las columnas detectadas en una tabla.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de tabla||public.users|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
 ### Listar Columnas
 
 Devuelve los nombres de columnas disponibles en una tabla.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de tabla||public.users|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
+|Asignar resultado a variable|Nombre de la variable donde se guardara la lista de nombres de columnas, por ejemplo ["id", "nombre"].|resultado|
 
 ### Insertar Filas
 
 Inserta una o mas filas en una tabla desde un array JSON.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de tabla||public.users|
-|Filas (JSON array)||[{"name":"Alfredo"}]|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
+|Filas (JSON array)|Array JSON con una o mas filas. Cada objeto representa una fila.|[{"name":"Alfredo"}]|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
 ### Actualizar Filas
 
 Actualiza una columna en filas seleccionadas por un filtro de igualdad.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de tabla||public.users|
-|Nombre de columna||status|
-|Valor||active|
-|Columna filtro||id|
-|Valor filtro||1|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
+|Nombre de columna|Nombre de la columna que recibira el nuevo valor.|status|
+|Valor|Nuevo valor que se asignara a la columna indicada.|active|
+|Columna filtro|Nombre de la columna que se usara para filtrar registros.|id|
+|Valor filtro|Valor que debe coincidir con la columna de filtro.|1|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
 ### Actualizar Multiples
 
 Actualiza multiples filas desde un datatable JSON, usando id o una clausula WHERE.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de tabla||public.users|
-|Datatable (JSON array)||[{"id":1,"name":"X"}]|
-|WHERE (opcional)||{"id":1}|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
+|Filas a actualizar (array JSON)|Array JSON con los datos a actualizar. Puede usar el id de cada fila o una condicion WHERE.|[{"id":1,"name":"X"}]|
+|WHERE (opcional)|Clausula WHERE opcional para seleccionar registros cuando no se usa id por fila.|{"id":1}|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
 ### Borrar Filas
 
 Elimina filas de una tabla donde una columna coincide con el valor indicado.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de tabla||public.users|
-|Columna filtro||id|
-|Valor filtro (valor o JSON array)||1|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
+|Columna filtro|Nombre de la columna que se usara para filtrar registros.|id|
+|Valor filtro (valor o JSON array)|Valor que debe coincidir con la columna de filtro.|1|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
-### Listar Buckets
+### Listar contenedores de archivos
 
 Lista los buckets de Storage disponibles en el proyecto Supabase conectado.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Asignar resultado a variable|Nombre de la variable donde se guardara la lista de nombres de contenedores de archivos, por ejemplo ["vault", "vault1"].|resultado|
 
-### Crear Bucket
+### Crear contenedor de archivos
 
 Crea un bucket de Storage y permite configurar visibilidad, limite y tipos MIME.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre bucket||my-bucket|
-|Publico|||
-|Limite tamano (opcional)||10000000|
-|Mimes permitidos (opcional)||image/png,image/jpeg|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre del contenedor de archivos|Nombre del contenedor de archivos de Storage.|my-bucket|
+|Publico|Indica si los archivos del contenedor seran publicos.||
+|Limite de tamano de archivo (opcional)|Limite opcional de tamano de archivo, en bytes. Por defecto 10000000 bytes.|10000000|
+|Tipos de archivo permitidos (opcional)|Tipos de archivo permitidos para subir al contenedor. Usar un array JSON, por ejemplo ["image/png", "image/jpeg", "application/pdf"]. Tambien puede usar text/plain, application/json o application/zip.|image/png,image/jpeg|
+|Asignar resultado a variable|Nombre de la variable donde se guardara True si el contenedor de archivos se creo correctamente o False si no se pudo crear.|resultado|
 
-### Obtener Bucket
+### Obtener contenedor de archivos
 
 Obtiene detalles de un bucket y opcionalmente lista sus archivos en la raiz.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre bucket||my-bucket|
-|Incluir archivos|||
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre del contenedor de archivos|Nombre del contenedor de archivos de Storage.|my-bucket|
+|Incluir archivos|Si esta activo, incluye los archivos ubicados en la carpeta principal del contenedor.||
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
 ### Listar Archivos
 
 Lista archivos de un bucket de Storage, con filtro opcional por path o prefijo.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Bucket||my-bucket|
-|Path/prefix (opcional)|||
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Contenedor de archivos|Nombre del contenedor de archivos de Storage.|my-bucket|
+|Carpeta o prefijo (opcional)|Carpeta o comienzo de ruta opcional dentro del contenedor para filtrar archivos.||
+|Asignar resultado a variable|Nombre de la variable donde se guardara la lista de archivos encontrados en el contenedor. Si no hay archivos, guarda una lista vacia [].|resultado|
 
 ### Subir Archivo
 
 Sube un archivo local a un bucket de Storage, con object path y upsert opcionales.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Bucket||my-bucket|
-|Archivo local|Seleccione el archivo local a subir|C:/Users/Usuario/Desktop/archivo.png|
-|Object path (opcional)||folder/file.png|
-|Upsert (opcional)|||
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Contenedor de archivos|Nombre del contenedor de archivos de Storage.|my-bucket|
+|Archivo local|Ruta del archivo local que se subira a Supabase.|C:/Users/Usuario/Desktop/archivo.png|
+|Ruta destino del archivo (opcional)|Ruta del archivo dentro del contenedor de Storage.|folder/file.png|
+|Actualizar o insertar si ya existe (opcional)|Si esta activo, reemplaza el archivo si ya existe en la misma ruta; si no existe, lo inserta.||
+|Asignar resultado a variable|Nombre de la variable donde se guardara True si el archivo se subio correctamente o False si no se pudo subir.|resultado|
 
 ### Descargar Archivo
 
 Descarga un objeto de Storage desde un bucket a una carpeta o ruta local.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Bucket||my-bucket|
-|Object path||folder/file.png|
-|Carpeta destino local|Seleccione la carpeta local donde se descargara el archivo|C:/Users/Usuario/Descargas|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Contenedor de archivos|Nombre del contenedor de archivos de Storage.|my-bucket|
+|Ruta del archivo en Supabase|Ruta del archivo dentro del contenedor de Storage.|folder/file.png|
+|Carpeta destino local|Carpeta o ruta local donde se guardara el archivo descargado.|C:/Users/Usuario/Descargas|
+|Asignar resultado a variable|Nombre de la variable donde se guardara True si el archivo se descargo correctamente o False si no se pudo descargar.|resultado|
 
 ### Ejecutar Funcion
 
 Ejecuta una funcion RPC de Postgres en Supabase con parametros JSON opcionales.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de funcion||my_function|
-|Params (JSON object)||{}|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Nombre de funcion|Nombre de la funcion RPC/Postgres que se ejecutara en Supabase.|my_function|
+|Parametros (objeto JSON)|Objeto JSON opcional con los parametros que recibira la funcion. Por defecto {}.|{}|
+|Obtener respuesta completa de la API|Si esta activo, devuelve toda la respuesta de la funcion. Si no esta activo, devuelve solo el valor message cuando exista.||
+|Asignar resultado a variable|Nombre de la variable donde se guardara el valor message devuelto por la funcion. Si Obtener respuesta completa de la API esta activo, guarda toda la respuesta.|resultado|
 
-### Conectar Embeddings
+### Configurar busqueda semantica
 
 Configura la API key del proveedor de embeddings y devuelve los modelos disponibles.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Proveedor|||
-|API Key||...|
-|Modelo embedding por defecto (opcional)||text-embedding-3-small|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Proveedor|Proveedor de embeddings que se configurara para generar vectores.||
+|Clave de API|Clave de acceso del proveedor de embeddings.|...|
+|Modelo de embeddings por defecto (opcional)|Modelo de embeddings por defecto que se usara si otros comandos no indican uno. Por defecto text-embedding-3-small.|text-embedding-3-small|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
-### Generar Embedding
+### Generar vector de texto
 
 Divide texto en fragmentos, genera embeddings e inserta los vectores en una tabla.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Modelo embedding||text-embedding-3-small|
-|Nombre de tabla||documents|
-|Texto||text...|
-|Chunk size (opcional)||1024|
-|Chunk overlap (opcional)||128|
-|Dim embedding (opcional)||384|
-|Columna content (opcional)||content|
-|Columna embedding (opcional)||embedding|
-|Columna metadata (opcional)||metadata|
-|Metadata extra (JSON object)||{}|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Modelo de embeddings|Modelo usado para generar embeddings. Por defecto text-embedding-3-small.|text-embedding-3-small|
+|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|documents|
+|Texto|Texto fuente que se procesara para generar embeddings.|text...|
+|Tamano de fragmento (opcional)|Tamano maximo opcional de cada fragmento de texto. Por defecto 1024.|1024|
+|Superposicion entre fragmentos (opcional)|Cantidad opcional de caracteres repetidos entre fragmentos consecutivos para conservar contexto. Por defecto 128.|128|
+|Dimension del vector (opcional)|Dimension esperada del vector generado. Debe coincidir con el modelo y la columna vectorial. Por defecto 384.|384|
+|Columna content (opcional)|Columna donde se almacenara el contenido de cada fragmento. Por defecto content.|content|
+|Columna del vector (opcional)|Columna vectorial donde se almacenara el vector generado. Por defecto embedding.|embedding|
+|Columna metadata (opcional)|Columna donde se almacenaran los datos adicionales de cada fragmento. Por defecto metadata.|metadata|
+|Datos adicionales (objeto JSON)|Objeto JSON opcional con datos adicionales para guardar junto a cada fragmento. Por defecto {}.|{}|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
 
 ### Buscar Documentos
 
 Genera un embedding de consulta y llama un RPC vectorial para buscar documentos.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Modelo embedding||text-embedding-3-small|
-|Nombre de funcion||match_documents|
-|Texto a buscar||query...|
-|Numero de resultados||5|
-|Dim embedding (opcional)||384|
-|Filtro (JSON object)||{}|
-|Umbral match (opcional)||0.8|
-|Params RPC extra (JSON object)||{}|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Modelo de embeddings|Modelo usado para generar embeddings. Por defecto text-embedding-3-small.|text-embedding-3-small|
+|Nombre de funcion|Nombre de la funcion RPC/Postgres que se ejecutara en Supabase. Por defecto match_documents.|match_documents|
+|Texto a buscar|Texto de consulta que se convertira en embedding para buscar documentos similares.|query...|
+|Numero de resultados|Cantidad maxima de documentos similares a devolver. Por defecto 5.|5|
+|Dimension del vector (opcional)|Dimension esperada del vector generado. Debe coincidir con el modelo y la columna vectorial. Por defecto 384.|384|
+|Filtro (objeto JSON)|Objeto JSON opcional con filtros adicionales para la busqueda semantica. Por defecto {}.|{}|
+|Umbral match (opcional)|Umbral opcional de similitud minimo para aceptar resultados. Por defecto 0.8.|0.8|
+|Parametros RPC extra (objeto JSON)|Objeto JSON opcional con parametros extra que se enviaran a la funcion RPC. Por defecto {}.|{}|
+|Obtener mas detalles|Si esta activo, devuelve toda la informacion encontrada, incluyendo id, metadata y similitud. Si no esta activo, devuelve solo el contenido de cada documento.||
+|Asignar resultado a variable|Nombre de la variable donde se guardara la lista de contenidos encontrados. Si Obtener mas detalles esta activo, guarda toda la informacion devuelta por la busqueda.|resultado|
 
-### Trigger Supabase
+### Consultar nuevos registros
 
 Consulta una tabla buscando filas con id mayor al ultimo id procesado.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Tabla||public.users|
-|Ultimo id (opcional)||0|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado|resultado|
+|Tabla|Tabla que se consultara para detectar registros nuevos.|public.users|
+|Ultimo id (opcional)|Ultimo id procesado. El comando devuelve filas con id mayor a este valor. Por defecto 0.|0|
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|

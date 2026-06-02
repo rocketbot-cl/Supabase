@@ -45,13 +45,13 @@ Atualiza multiplas linhas a partir de um datatable JSON, usando id ou uma clausu
 9. Excluir Linhas
 Exclui linhas de uma tabela onde uma coluna coincide com o valor informado.
 
-10. Listar Buckets
+10. Listar recipientes de arquivos
 Lista os buckets de Storage disponiveis no projeto Supabase conectado.
 
-11. Criar Bucket
+11. Criar recipiente de arquivos
 Cria um bucket de Storage e permite configurar visibilidade, limite e tipos MIME.
 
-12. Obter Bucket
+12. Obter recipiente de arquivos
 Obtem detalhes de um bucket e opcionalmente lista seus arquivos na raiz.
 
 13. Listar Arquivos
@@ -66,16 +66,16 @@ Baixa um objeto de Storage de um bucket para uma pasta ou rota local.
 16. Executar Funcao
 Executa uma funcao RPC do Postgres no Supabase com parametros JSON opcionais.
 
-17. Conectar Embeddings
+17. Configurar busca semantica
 Configura a API key do provedor de embeddings e retorna os modelos disponiveis.
 
-18. Gerar Embedding
+18. Gerar vetor de texto
 Divide texto em partes, gera embeddings e insere os vetores em uma tabela.
 
 19. Buscar Documentos
 Gera um embedding de consulta e chama um RPC vetorial para buscar documentos.
 
-20. Trigger Supabase
+20. Consultar novos registros
 Consulta uma tabela buscando linhas com id maior que o ultimo id processado.
 
 
