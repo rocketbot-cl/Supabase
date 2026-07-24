@@ -143,27 +143,11 @@ elif module == "insert_rows":
 
 elif module == "get_table_columns":
     table_name = GetParams("table_name")
+    return_as_list = GetParams("return_as_list")
     res = GetParams("result_var")
 
     try:
-        response = mod_Supabase.get_table_columns_template_command(table_name)
-        SetVar(res, response)
-    except Exception as e:
-        SetVar(res, False)
-        PrintException()
-        raise e
-
-elif module == "list_table_columns":
-    table_name = GetParams("table_name")
-    res = GetParams("result_var")
-
-    try:
-        response = mod_Supabase.list_table_columns_command(table_name)
-        if isinstance(response, dict) and isinstance(response.get("columns"), list):
-            response = [
-                column.get("name") if isinstance(column, dict) else column
-                for column in response.get("columns")
-            ]
+        response = mod_Supabase.get_table_columns_command(table_name, return_as_list)
         SetVar(res, response)
     except Exception as e:
         SetVar(res, False)

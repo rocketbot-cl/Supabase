@@ -96,21 +96,14 @@ Lee filas de una tabla donde una columna coincide con el valor indicado.
 |Valor filtro|Valor que debe coincidir con la columna de filtro.|1|
 |Asignar resultado a variable|Nombre de la variable donde se guardara la lista de registros filtrados. Si no hay coincidencias, guarda una lista vacia [].|resultado|
 
-### Columnas (template)
+### Columnas de tabla
 
-Crea una plantilla JSON vacia usando las columnas detectadas en una tabla.
+Devuelve las columnas de una tabla como plantilla de fila vacia o como lista de nombres.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
-|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado.|resultado|
-
-### Listar Columnas
-
-Devuelve los nombres de columnas disponibles en una tabla.
-|Parámetros|Descripción|ejemplo|
-| --- | --- | --- |
-|Nombre de tabla|Nombre de la tabla de Supabase que se usara en este comando.|public.users|
-|Asignar resultado a variable|Nombre de la variable donde se guardara la lista de nombres de columnas, por ejemplo ["id", "nombre"].|resultado|
+|Retornar como lista|Si esta activo, guarda una lista simple de nombres de columnas, por ejemplo ["id", "nombre"]. Si esta inactivo, guarda una plantilla JSON, por ejemplo {"columns" [{"id" ""}]}||
+|Asignar resultado a variable|Nombre de la variable donde se guardara el resultado segun el formato seleccionado.|resultado|
 
 ### Insertar Filas
 

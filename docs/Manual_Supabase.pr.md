@@ -8,7 +8,7 @@ Supabase e uma plataforma open-source baseada em Postgres para criar backends co
 
 *Read this in other languages: [English](Manual_Supabase.md), [Português](Manual_Supabase.pr.md), [Español](Manual_Supabase.es.md)*
 
-![banner](imgs/Banner_Supabase.png o jpg)
+![banner](imgs/Banner_Supabase.jpg)
 ## Como instalar este módulo
 
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
@@ -96,21 +96,14 @@ Le linhas de uma tabela onde uma coluna coincide com o valor informado.
 |Valor filtro|Valor que deve coincidir com a coluna de filtro.|1|
 |Atribuir resultado a variavel|Nome da variavel onde sera armazenada a lista de registros filtrados. Se nao houver correspondencias, armazena uma lista vazia [].|resultado|
 
-### Colunas (template)
+### Colunas da tabela
 
-Cria um modelo JSON vazio usando as colunas detectadas em uma tabela.
+Retorna as colunas de uma tabela como modelo de linha vazio ou como lista de nomes.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Nome da tabela|Nome da tabela do Supabase usada por este comando.|public.users|
-|Atribuir resultado a variavel|Nome da variavel para armazenar o resultado.|resultado|
-
-### Listar Colunas
-
-Retorna os nomes de colunas disponiveis em uma tabela.
-|Parâmetros|Descrição|exemplo|
-| --- | --- | --- |
-|Nome da tabela|Nome da tabela do Supabase usada por este comando.|public.users|
-|Atribuir resultado a variavel|Nome da variavel para armazenar a lista de nomes de colunas, por exemplo ["id", "nome"].|resultado|
+|Retornar como lista|Quando ativo, armazena uma lista simples de nomes de colunas, por exemplo ["id", "nome"]. Quando inativo, armazena um modelo JSON, por exemplo {"columns" [{"id" ""}]}||
+|Atribuir resultado a variavel|Nome da variavel para armazenar o resultado usando o formato selecionado.|resultado|
 
 ### Inserir Linhas
 

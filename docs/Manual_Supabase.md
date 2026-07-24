@@ -8,7 +8,7 @@ Supabase is an open-source Postgres-based platform for building backends with au
 
 *Read this in other languages: [English](Manual_Supabase.md), [Português](Manual_Supabase.pr.md), [Español](Manual_Supabase.es.md)*
 
-![banner](imgs/Banner_Supabase.png o jpg)
+![banner](imgs/Banner_Supabase.jpg)
 ## How to install this module
 
 To install the module in Rocketbot Studio, it can be done in two ways:
@@ -95,19 +95,12 @@ Read rows from a table where one column matches the provided value.
 
 ### Get Table Columns
 
-Build a blank JSON row template using the columns detected in a table.
+Return table columns as a blank row template or as a list of column names.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Table name|Name of the Supabase table used by this command.|public.users|
-|Assign result to variable|Variable name to store the result.|result|
-
-### List Table Columns
-
-Return the available column names for a table.
-|Parameters|Description|example|
-| --- | --- | --- |
-|Table name|Name of the Supabase table used by this command.|public.users|
-|Assign result to variable|Variable name to store the list of column names, for example ["id", "name"].|result|
+|Return as list|When enabled, stores a simple list of column names, for example ["id", "name"]. When disabled, stores a JSON template, for example {"columns" [{"id" ""}]}||
+|Assign result to variable|Variable name to store the result using the selected output format.|result|
 
 ### Insert Rows
 

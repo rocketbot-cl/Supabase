@@ -333,19 +333,19 @@
         {
             "en": {
                 "title": "Get Table Columns",
-                "description": "Build a blank JSON row template using the columns detected in a table.",
+                "description": "Return table columns as a blank row template or as a list of column names.",
                 "title_options": "Select Option",
                 "options": null
             },
             "es": {
-                "title": "Columnas (template)",
-                "description": "Crea una plantilla JSON vacia usando las columnas detectadas en una tabla.",
+                "title": "Columnas de tabla",
+                "description": "Devuelve las columnas de una tabla como plantilla de fila vacia o como lista de nombres.",
                 "title_options": "Seleccione una opcion",
                 "options": null
             },
             "pr": {
-                "title": "Colunas (template)",
-                "description": "Cria um modelo JSON vazio usando as colunas detectadas em uma tabela.",
+                "title": "Colunas da tabela",
+                "description": "Retorna as colunas de uma tabela como modelo de linha vazio ou como lista de nomes.",
                 "title_options": "Selecione uma opcao",
                 "options": null
             },
@@ -370,6 +370,22 @@
                         "required": true
                     },
                     {
+                        "type": "checkbox",
+                        "title": {
+                            "en": "Return as list",
+                            "es": "Retornar como lista",
+                            "pr": "Retornar como lista"
+                        },
+                        "description": {
+                            "es": "Si esta activo, guarda una lista simple de nombres de columnas, por ejemplo [\"id\", \"nombre\"]. Si esta inactivo, guarda una plantilla JSON, por ejemplo {\"columns\": [{\"id\": \"\"}]}",
+                            "en": "When enabled, stores a simple list of column names, for example [\"id\", \"name\"]. When disabled, stores a JSON template, for example {\"columns\": [{\"id\": \"\"}]}",
+                            "pr": "Quando ativo, armazena uma lista simples de nomes de colunas, por exemplo [\"id\", \"nome\"]. Quando inativo, armazena um modelo JSON, por exemplo {\"columns\": [{\"id\": \"\"}]}"
+                        },
+                        "id": "return_as_list",
+                        "css": "col-md-6",
+                        "required": false
+                    },
+                    {
                         "type": "input",
                         "placeholder": {
                             "es": "resultado",
@@ -387,9 +403,9 @@
                             "pr": "Nome da variavel sem {}"
                         },
                         "description": {
-                            "es": "Nombre de la variable donde se guardara el resultado.",
-                            "en": "Variable name to store the result.",
-                            "pr": "Nome da variavel para armazenar o resultado."
+                            "es": "Nombre de la variable donde se guardara el resultado segun el formato seleccionado.",
+                            "en": "Variable name to store the result using the selected output format.",
+                            "pr": "Nome da variavel para armazenar o resultado usando o formato selecionado."
                         },
                         "id": "result_var",
                         "css": "col-md-6",
@@ -400,86 +416,6 @@
             },
             "icon": "data:image/png;base64,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",
             "module": "get_table_columns",
-            "module_name": "Supabase",
-            "visible": true,
-            "options": false,
-            "father": "module",
-            "group": "scripts",
-            "linux": true,
-            "windows": true,
-            "mac": true,
-            "docker": false
-        },
-        {
-            "en": {
-                "title": "List Table Columns",
-                "description": "Return the available column names for a table.",
-                "title_options": "Select Option",
-                "options": null
-            },
-            "es": {
-                "title": "Listar Columnas",
-                "description": "Devuelve los nombres de columnas disponibles en una tabla.",
-                "title_options": "Seleccione una opcion",
-                "options": null
-            },
-            "pr": {
-                "title": "Listar Colunas",
-                "description": "Retorna os nomes de colunas disponiveis em uma tabela.",
-                "title_options": "Selecione uma opcao",
-                "options": null
-            },
-            "form": {
-                "css": "modal-lg",
-                "inputs": [
-                    {
-                        "type": "input",
-                        "placeholder": "public.users",
-                        "title": {
-                            "en": "Table name",
-                            "es": "Nombre de tabla",
-                            "pr": "Nome da tabela"
-                        },
-                        "description": {
-                            "es": "Nombre de la tabla de Supabase que se usara en este comando.",
-                            "en": "Name of the Supabase table used by this command.",
-                            "pr": "Nome da tabela do Supabase usada por este comando."
-                        },
-                        "id": "table_name",
-                        "css": "col-md-6",
-                        "required": true
-                    },
-                    {
-                        "type": "input",
-                        "placeholder": {
-                            "es": "resultado",
-                            "en": "result",
-                            "pr": "resultado"
-                        },
-                        "title": {
-                            "en": "Assign result to variable",
-                            "es": "Asignar resultado a variable",
-                            "pr": "Atribuir resultado a variavel"
-                        },
-                        "help": {
-                            "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}",
-                            "pr": "Nome da variavel sem {}"
-                        },
-                        "description": {
-                            "es": "Nombre de la variable donde se guardara la lista de nombres de columnas, por ejemplo [\"id\", \"nombre\"].",
-                            "en": "Variable name to store the list of column names, for example [\"id\", \"name\"].",
-                            "pr": "Nome da variavel para armazenar a lista de nomes de colunas, por exemplo [\"id\", \"nome\"]."
-                        },
-                        "id": "result_var",
-                        "css": "col-md-6",
-                        "required": true,
-                        "remove_vars": true
-                    }
-                ]
-            },
-            "icon": "data:image/png;base64,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",
-            "module": "list_table_columns",
             "module_name": "Supabase",
             "visible": true,
             "options": false,

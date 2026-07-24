@@ -27,55 +27,52 @@ Lee filas de una tabla Supabase, con orden opcional por created_at.
 3. Filtrar Tabla
 Lee filas de una tabla donde una columna coincide con el valor indicado.
 
-4. Columnas (template)
-Crea una plantilla JSON vacia usando las columnas detectadas en una tabla.
+4. Columnas de tabla
+Devuelve las columnas de una tabla como plantilla de fila vacia o como lista de nombres.
 
-5. Listar Columnas
-Devuelve los nombres de columnas disponibles en una tabla.
-
-6. Insertar Filas
+5. Insertar Filas
 Inserta una o mas filas en una tabla desde un array JSON.
 
-7. Actualizar Filas
+6. Actualizar Filas
 Actualiza una columna en filas seleccionadas por un filtro de igualdad.
 
-8. Actualizar Multiples
+7. Actualizar Multiples
 Actualiza multiples filas desde un datatable JSON, usando id o una clausula WHERE.
 
-9. Borrar Filas
+8. Borrar Filas
 Elimina filas de una tabla donde una columna coincide con el valor indicado.
 
-10. Listar contenedores de archivos
+9. Listar contenedores de archivos
 Lista los buckets de Storage disponibles en el proyecto Supabase conectado.
 
-11. Crear contenedor de archivos
+10. Crear contenedor de archivos
 Crea un bucket de Storage y permite configurar visibilidad, limite y tipos MIME.
 
-12. Obtener contenedor de archivos
+11. Obtener contenedor de archivos
 Obtiene detalles de un bucket y opcionalmente lista sus archivos en la raiz.
 
-13. Listar Archivos
+12. Listar Archivos
 Lista archivos de un bucket de Storage, con filtro opcional por path o prefijo.
 
-14. Subir Archivo
+13. Subir Archivo
 Sube un archivo local a un bucket de Storage, con object path y upsert opcionales.
 
-15. Descargar Archivo
+14. Descargar Archivo
 Descarga un objeto de Storage desde un bucket a una carpeta o ruta local.
 
-16. Ejecutar Funcion
+15. Ejecutar Funcion
 Ejecuta una funcion RPC de Postgres en Supabase con parametros JSON opcionales.
 
-17. Configurar busqueda semantica
+16. Configurar busqueda semantica
 Configura la API key del proveedor de embeddings y devuelve los modelos disponibles.
 
-18. Generar vector de texto
+17. Generar vector de texto
 Divide texto en fragmentos, genera embeddings e inserta los vectores en una tabla.
 
-19. Buscar Documentos
+18. Buscar Documentos
 Genera un embedding de consulta y llama un RPC vectorial para buscar documentos.
 
-20. Consultar nuevos registros
+19. Consultar nuevos registros
 Consulta una tabla buscando filas con id mayor al ultimo id procesado.
 
 

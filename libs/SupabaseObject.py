@@ -1534,7 +1534,7 @@ class SupabaseObject:
             "note": models_info.get("note"),
         }
 
-    def get_table_columns_template_command(self, table_name: Any) -> dict[str, Any]:
+    def infer_table_columns(self, table_name: Any) -> list[str]:
         name = (str(table_name or "").strip())
         if not name:
             raise Exception("table_name is required")
@@ -1550,26 +1550,17 @@ class SupabaseObject:
             if "id" in inserted[0]:
                 self.delete_rows(name, where={"id": inserted[0]["id"]})
 
+        return cols
+
+    def get_table_columns_command(self, table_name: Any, return_as_list: Any = False) -> Any:
+        cols = self.infer_table_columns(table_name)
+        checkbox_enabled = str(return_as_list).strip().lower() in ("true", "1", "yes", "on", "si", "sí")
+
+        if checkbox_enabled:
+            return cols
+
         template = {c: "" for c in cols}
         return {"columns": [template]}
-
-    def list_table_columns_command(self, table_name: Any) -> dict[str, Any]:
-        name = (str(table_name or "").strip())
-        if not name:
-            raise Exception("table_name is required")
-
-        rows = select_table(self.require_session(), name, limit=1)
-        if rows:
-            cols = [c for c in rows[0].keys() if c != "created_at"]
-        else:
-            inserted = self.insert_rows(name, [{}])
-            if not inserted:
-                return {"columns": []}
-            cols = [c for c in inserted[0].keys() if c != "created_at"]
-            if "id" in inserted[0]:
-                self.delete_rows(name, where={"id": inserted[0]["id"]})
-
-        return {"columns": [{"name": c} for c in cols]}
 
     def get_table(self, table_name: str, *, sort_created_at: bool = False) -> list[dict[str, Any]]:
         cfg = self.require_session()

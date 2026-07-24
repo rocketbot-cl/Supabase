@@ -28,54 +28,51 @@ Read rows from a Supabase table, with optional sorting by created_at.
 Read rows from a table where one column matches the provided value.
 
 4. Get Table Columns
-Build a blank JSON row template using the columns detected in a table.
+Return table columns as a blank row template or as a list of column names.
 
-5. List Table Columns
-Return the available column names for a table.
-
-6. Insert Rows
+5. Insert Rows
 Insert one or more rows into a table from a JSON array.
 
-7. Update Rows
+6. Update Rows
 Update one column in rows selected by an equality filter.
 
-8. Update Multiple Rows
+7. Update Multiple Rows
 Update multiple rows from a JSON datatable, using id or a WHERE clause to match rows.
 
-9. Delete Rows
+8. Delete Rows
 Delete rows from a table where a column matches the provided value.
 
-10. List Buckets
+9. List Buckets
 List the Storage buckets available in the connected Supabase project.
 
-11. Create Bucket
+10. Create Bucket
 Create a Storage bucket and optionally configure visibility, size limit, and MIME types.
 
-12. Get Bucket
+11. Get Bucket
 Get bucket details and optionally include the files stored at the bucket root.
 
-13. List Files
+12. List Files
 List files in a Storage bucket, optionally filtering by path or prefix.
 
-14. Upload File
+13. Upload File
 Upload a local file to a Storage bucket, with optional object path and upsert.
 
-15. Download File
+14. Download File
 Download a Storage object from a bucket into a selected local folder or file path.
 
-16. Execute Postgres Function
+15. Execute Postgres Function
 Execute a Postgres RPC function in Supabase with optional JSON parameters.
 
-17. Connect - Embedding Provider
+16. Connect - Embedding Provider
 Configure the embedding provider API key and return the available embedding models.
 
-18. Generate And Store Embedding
+17. Generate And Store Embedding
 Split text into chunks, generate embeddings, and insert the vectors into a table.
 
-19. Retrieve Documents
+18. Retrieve Documents
 Generate a query embedding and call a vector-search RPC to retrieve matching documents.
 
-20. Trigger Supabase
+19. Trigger Supabase
 Poll a table for rows with id greater than the last processed id.
 
 
